@@ -24,7 +24,7 @@ class TestSEALS(unittest.TestCase):
             # files that already exist. 
             p.user_dir = os.path.expanduser('~')        
             p.extra_dirs = ['Files', 'seals', 'projects', 'tests']
-            p.project_name = 'test_standard_fast'
+            p.project_name = 'Brazil_magpie_mapbiomas'
             if self.do_full_seals_test:
                 p.project_name = p.project_name + '_' + hb.pretty_time() # If don't you want to recreate everything each time, comment out this line.
             
@@ -54,7 +54,7 @@ class TestSEALS(unittest.TestCase):
             # If you have not run SEALS before, SEALS will generate it in your project's input_dir.
             # A useful way to get started is to to run SEALS on the test data without modification
             # and then edit the scenario_definitions.csv to your project needs.   
-            p.scenario_definitions_filename = 'standard_scenarios.csv' 
+            p.scenario_definitions_filename = 'standard_scenarios_BRA_magpie_mapbiomas2.csv' 
             p.scenario_definitions_path = os.path.join(p.input_dir, p.scenario_definitions_filename)
             seals_initialize_project.initialize_scenario_definitions(p)
                 
