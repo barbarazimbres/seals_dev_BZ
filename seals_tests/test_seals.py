@@ -24,7 +24,7 @@ class TestSEALS(unittest.TestCase):
             # files that already exist. 
             p.user_dir = os.path.expanduser('~')        
             p.extra_dirs = ['Files', 'seals', 'projects', 'tests']
-            p.project_name = 'Brazil_magpie_mapbiomas'
+            p.project_name = 'Brazil_magpie_mapbiomas_policy'
             if self.do_full_seals_test:
                 p.project_name = p.project_name + '_' + hb.pretty_time() # If don't you want to recreate everything each time, comment out this line.
             
@@ -54,7 +54,7 @@ class TestSEALS(unittest.TestCase):
             # If you have not run SEALS before, SEALS will generate it in your project's input_dir.
             # A useful way to get started is to to run SEALS on the test data without modification
             # and then edit the scenario_definitions.csv to your project needs.   
-            p.scenario_definitions_filename = 'standard_scenarios_BRA_magpie_mapbiomas2.csv' 
+            p.scenario_definitions_filename = 'standard_scenarios_BRA_magpie_mapbiomas_policy5.csv' 
             p.scenario_definitions_path = os.path.join(p.input_dir, p.scenario_definitions_filename)
             seals_initialize_project.initialize_scenario_definitions(p)
                 
@@ -70,7 +70,7 @@ class TestSEALS(unittest.TestCase):
 
             result = 'Done!'            
 
-            required_result_path = os.path.join(p.stitched_lulc_simplified_scenarios_dir, 'lulc_esa_seals7_ssp2_rcp45_luh2-message_bau_shift_2050.tif')
+            required_result_path = os.path.join(p.stitched_lulc_simplified_scenarios_dir, 'lulc_mapbiomas_seals7_ssp5_rcp85_luh2-magpie_bau_2050.tif')
             result = hb.path_exists(required_result_path)
             self.assertTrue(result)
             
